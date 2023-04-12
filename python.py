@@ -142,6 +142,8 @@ for num in range(num1, num2 +1, 2):
 # EJERCICIO 7
 # Realizar una algoritmo que muestre la tabla de multiplicar de un número 
 # introducido por teclado.
-tabla = int(input("Que tabla deseas mostrar:"))
+"""tabla = int(input("Que tabla deseas mostrar:"))
 for num in range(1,11):
-    print("%d * %d = %d" % (tabla, num, tabla * num))
+    print("%d * %d = %d" % (tabla, num, tabla * num))"""
+
+#hola

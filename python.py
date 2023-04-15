@@ -146,4 +146,60 @@ for num in range(num1, num2 +1, 2):
 for num in range(1,11):
     print("%d * %d = %d" % (tabla, num, tabla * num))"""
 
-#hola
+# Escribe un programa que pida el limite inferior y superior de un intervalo. 
+# Si el límite inferior es mayor que el superior lo tiene que volver a pedir.
+# A continuación se van introduciendo números hasta que introduzcamos el 0. 
+# Cuando termine el programa dará las siguientes informaciones:
+# 	* La suma de los números que están dentro del intervalo (intervalo abierto).
+# 	* Cuantos números están fuera del intervalo.
+# 	* He informa si hemos introducido algún número igual a los límites del intervalo.
+
+"""suma_dentro_intervalo = 0
+cont_fuera_intervalo = 0
+igual_limites = 0
+
+# Me aseguro que el limite inferior es inferior al limite superior
+while True:
+    num_lim_sup = int(input("Introduce un limite superior:"))
+    num_lim_inf = int(input("Introduce un limite inferior:"))
+    if num_lim_inf > num_lim_sup:
+        print("Error: el limite inferior tiene que ser inferior al limite superior")
+    if num_lim_inf <= num_lim_sup:
+        break;
+
+num = int(input("Introduce un numero (0, para salir):"))
+while num != 0:
+    # Pertenece al intervalo
+    if num > num_lim_inf and num < num_lim_sup:
+        suma_dentro_intervalo = suma_dentro_intervalo + num
+    else:
+        # No pertenece al intervalo
+        cont_fuera_intervalo = cont_fuera_intervalo + 1
+    # Numero igual a alguno de los limites
+    if num == num_lim_inf or num == num_lim_sup:
+        igual_limites = True
+
+    num = int(input("Introduce un numero (0, para salir):"))
+
+print("La suma de los numeros dentro del intervalo: ", suma_dentro_intervalo)
+print("La cantidad de numeros fuera del intervalo: ", cont_fuera_intervalo)
+if igual_limites:
+    print("Se ha introducido algun numero igual a los limites del intervalo")
+else:
+    print("No se ha introducido ningun numero igual a los limites del intervalo")"""
+
+# Escribe un programa que dados dos números, uno real (base) y un entero positivo 
+# (exponente), saque por pantalla el resultado de la potencia. No se puede 
+# utilizar el operador de potencia.
+"""base = int(input("Introduce el numero base:"))
+while True:
+    exponente = int(input("Introduce el numero exponente de la potencia:"))
+    if exponente < 0:
+        print("Error: El exponente debe ser positivo")
+    else:
+        break;
+potencia = 1
+for i in range(1, exponente +1):
+    potencia = potencia * base
+print("Potencia: ", potencia)"""
+

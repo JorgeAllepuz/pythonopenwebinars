@@ -146,6 +146,7 @@ for num in range(num1, num2 +1, 2):
 for num in range(1,11):
     print("%d * %d = %d" % (tabla, num, tabla * num))"""
 
+# EJERCICIO 8
 # Escribe un programa que pida el limite inferior y superior de un intervalo. 
 # Si el límite inferior es mayor que el superior lo tiene que volver a pedir.
 # A continuación se van introduciendo números hasta que introduzcamos el 0. 
@@ -188,6 +189,7 @@ if igual_limites:
 else:
     print("No se ha introducido ningun numero igual a los limites del intervalo")"""
 
+# EJERCICIO 9
 # Escribe un programa que dados dos números, uno real (base) y un entero positivo 
 # (exponente), saque por pantalla el resultado de la potencia. No se puede 
 # utilizar el operador de potencia.

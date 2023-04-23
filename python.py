@@ -428,3 +428,234 @@ if sub_cadena in cadena:
      print("Cadena incluye subcadena")
 else:
     print("Cadena no incluye subcadena")"""
+
+#EJERCICIOS LISTAS
+# EJERCICIO 1
+## Realizar un programa que inicialice una lista con 10 valores aleatorios (del 1 al 10)
+## y posteriormente muestre en pantalla cada elemento de la lista junto con su cuadrado 
+## y su cubo.
+
+"""import random
+lista_numeros = []
+for indice in range(1,11):
+    lista_numeros.append(random.randint(1,10))
+for numero in lista_numeros:
+    print(numero," ",numero **2," ",numero **3)"""
+
+# EJERCICIO 2
+# Crea una lista e inicalizala con 5 cadenas de caracteres leídas por teclado. 
+# Copia los elementos de la lista en otra lista pero en orden inverso, y muestra 
+# sus elementos  por la pantalla.
+"""lista1 = []
+lista2 = []
+# Recorro la lista1 y leo cada elemento por teclado.
+for indice in range(1,6):
+    lista1.append(input("Dame la cadena %d:" % indice))
+# Copio la lista1 en la lista2 en orden inverso.
+lista2=lista1[::-1]
+
+# Recorro la lista2 para mostrarlo.
+for cadena in lista2:
+    print(cadena)"""
+
+# EJERCICIO 3
+# Se quiere realizar un programa que lea por teclado las 5 notas obtenidas por un 
+# alumno (comprendidas entre 0 y 10). A continuación debe mostrar todas las notas, 
+# la nota media, la nota más alta que ha sacado y la menor.
+
+"""notas = []
+for indice in range(1,6):
+	while True:
+		nota = int(input("Introduce la nota %d:" % indice))
+		if nota < 0 or nota >10:
+			print("Nota invalida")
+		if nota>=0 and nota<=10: break
+	notas.append(nota)
+
+# Muestro resultados
+
+print("Notas: ",end="")
+for nota in notas:
+	print(nota," ",end="")
+print()
+print("Nota media: ",sum(notas)/len(notas))
+print("Nota max: ",max(notas))
+print("Nota min: ",min(notas))"""
+
+# EJERCICIO 4
+# Programa que declare una lista y la vaya llenando de números hasta que 
+# introduzcamos un número negativo. Entonces se debe imprimir el vector 
+# (sólo los elementos introducidos).
+"""lista = []
+numero = int(input("Introduce un numero (nº negativo para salir):"))
+while numero >= 0:
+    lista.append(numero)
+    numero = int(input("Introduce un numero (nº negativo para salir):"))
+for numero in lista:
+    print(numero," ",end="")"""
+
+# EJERCICIO 5
+# Hacer un programa que inicialice una lista de números con valores aleatorios 
+# (10 valores), y posterior ordene los elementos de menor a mayor.
+"""import random
+lista = []
+for indice in range(1,11):
+    lista.append(random.randint(1,10))
+# Ordeno la lista
+lista.sort()
+# Recorro el vector ordenado
+for numero in lista:
+    print(numero," ",end="")"""
+
+# EJERCICIO 6
+# Crea un programa que pida un número al usuario un número de mes 
+# (por ejemplo, el 4) y diga cuántos días tiene (por ejemplo, 30) 
+# y el nombre del mes. Debes usar listas. Para simplificarlo vamos 
+# a suponer que febrero tiene 28 días.
+"""dias = [31,28,31,30,31,30,31,31,30,31,30,31]
+nombre_mes = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]
+while True:
+	mes = int(input("Introduce un mes (1-12):"))
+	if mes < 1 or mes > 12:
+		print("Error: mes incorrecto.")
+	if mes>=1 and mes<=12: break
+print("El mes de",nombre_mes[mes-1],"tiene",dias[mes-1],"días.")"""
+
+# EJERCICIO 7
+# Programa que declare tres listas 'lista1', 'lista2' y 'lista3' de cinco 
+# enteros cada uno, pida valores para 'lista1' y 'lista2' y 
+# calcule lista3=lista1+lista2.
+"""lista1 = []
+lista2 = []
+lista3 = []
+for indice in range(1,6):
+	lista1.append(int(input("Introduce el elemento %d de la lista1:" % indice)))
+for indice in range(1,6):
+	lista2.append(int(input("Introduce el elemento %d de la lista2:" % indice)))
+for indice in range(0,5):
+	lista3.append(lista1[indice] + lista2[indice])
+print("La lista3 es:")
+for numero in lista3:
+	print(numero," ",end="")"""
+
+# EJERCICIO 8
+# Queremos guardar los nombres y la edades de los alumnos de un curso. 
+# Realiza un programa que introduzca el nombre y la edad de cada alumno. 
+# El proceso de lectura de datos terminará cuando se introduzca como nombre 
+# un asterisco (*) Al finalizar se mostrar� los siguientes datos:
+#  * Todos lo alumnos mayores de edad.
+#  * Los alumnos mayores (los que tienen más edad)
+"""nombres = []
+edades = []
+while True:
+    nombre = input("Introduce el nombre del alumno:")
+    if nombre != "*":
+        nombres.append(nombre)
+        edades.append(int(input("Dime la edad del alumno:")))
+    if nombre == "*": break
+
+# Calcular la edad máxima
+edad_max = max(edades)
+
+# Alumnos mayores de edad
+print("Alumnos mayores de edad:")
+print("=======================")
+for nombre,edad in zip(nombres,edades):
+    if edad >= 18:
+        print(nombre)
+
+# Alumnos mayores
+print("Alumnos mayores")
+print("===============")
+for nombre,edad in zip(nombres,edades):
+    if edad == edad_max:
+        print(nombre)"""
+
+# EJERCICIO 9
+# Queremos guardar la temperatura mínima y máxima de 5 días. 
+# Realiza un programa que de la siguiente información:
+# * La temperatura media de cada día
+# * Los días con menos temperatura
+# * Se lee una temperatura por teclado y se muestran los días cuya temperatura
+#   máxima coincide con ella. 
+# Si no existe ningún día se muestra un mensaje de información.
+
+# Recorrido para rellenar la tabla(5 dias con temp. max y min)
+# En este caso se crea una lista de listas
+"""temperaturas = []
+for indice in range(1,6):
+    temperatura = []
+    temperatura.append(int(input("Dia %d. Temperatura máxima:" % indice)))
+    temperatura.append(int(input("Dia %d. Temperatura minima:" % indice)))
+    temperaturas.append(temperatura)
+
+# Mostrar temperatura media
+print("Temperaturas medias")
+print("===================")
+for temperatura in temperaturas:
+    print("Dia %d. Temperatura media: %f:" % (indice, sum(temperatura)/len(temperatura)))
+    indice += 1
+
+# Calcular temperatura mínima más pequeña
+# Supongo que es la primera
+temp_min = temperaturas[0][1];
+for temperatura in temperaturas:
+    if temperatura[1] < temp_min:
+        temp_min = temperatura[1]
+print(temp_min)"""
+
+# EJERCICIO 10
+# Diseñar el algoritmo correspondiente a un  programa, que:
+# 
+# * Crea una tabla (lista con dos dimensiones) de 5x5 enteros.
+# * Carga la tabla con valores numéricos enteros.
+# * Suma todos los elementos de cada fila y todos los elementos de cada columna
+#   visualizando los resultados en pantalla.
+"""tabla = []
+for indice_fila in range(1,6):
+    fila = []
+    for indice_colum in range(1,6):
+        fila.append(int(input("Introduce el número de la fila %d y la columna %d:" % (indice_fila,indice_colum))))
+    tabla.append(fila)
+print(tabla)
+
+# Suma de filas
+indice_fila = 1
+for fila in tabla:
+    print("La suma de la fila %d es: %d" % (indice_fila,sum(fila)))
+    indice_fila +=1
+
+# Suma de columnas
+for indice_colum in range(1,6):
+    suma = 0
+    for fila in tabla:
+        suma = suma + fila[indice_colum - 1]
+    print("La suma de los elemento de la columna %d es: %d" % (indice_colum,suma))"""
+
+# EJERCICIO 11
+# Diseñar el algoritmo correspondiente a un programa, que:
+#  * Crea una tabla bidimensional de longitud 5x5 y nombre 'diagonal'.
+#  * Carga la tabla de forma que los componentes pertenecientes a la diagonal de la 
+#    matriz tomen el valor 1 y el resto el valor 0.
+#  * Muestra el contenido de la tabla en pantalla.
+matriz = []
+for indice_fila in range(0,5):
+    fila= []
+    for indice_colum in range(0,5):
+        # Si estoy en la diagonal inicializo 1
+        if indice_fila == indice_colum or indice_fila == 4 - indice_colum:
+            fila.append(1)
+        # No estoy en la diagonal inicializo 0
+        else:
+            fila.append(0)
+    matriz.append(fila)
+# Recorro la lista para mostrarla
+for fila in matriz:
+    for elemento in fila:
+        print(elemento," ",end="")
+    print()
+
+
+
+
+
